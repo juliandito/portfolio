@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ExternalLink, FileText, FolderGit2, Mail } from 'lucide-react'
 
+import { Badge } from './components/Badge'
 import { ProjectCard } from './components/ProjectCard'
 import { ProjectModal } from './components/ProjectModal'
 import { contactLinks, profilePhoto, projects, resumeHref } from './data/portfolio'
@@ -11,6 +12,23 @@ const contactIcons = {
   LinkedIn: ExternalLink,
   GitHub: FolderGit2,
 }
+
+const skillTools = [
+  'React',
+  'TypeScript',
+  'Vue.js',
+  'Python Django',
+  'NestJS',
+  'Golang',
+  'PHP Laravel',
+  'PostgreSQL',
+  'MySQL',
+  'MSSQL',
+  'Docker',
+  'Kubernetes',
+  'Jenkins',
+  'Agile Scrum',
+]
 
 function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
@@ -77,37 +95,36 @@ function App() {
 
             {/* Right: About Me */}
             <div className="glow-ring rounded-2xl border border-base-300/70 bg-base-100/70 p-6 sm:p-8">
-              <h2 className="mb-5 text-2xl font-bold text-white">🪪 About Me</h2>
+              <h2 className="mb-5 text-2xl font-bold text-white">About Me</h2>
               <p className="text-base leading-8 text-slate-200">
-                Hi! My name is <strong className="text-white">Kevin Juliandito</strong>. I&apos;m a
-                Software Engineer at <strong className="text-white">Visual Analysis</strong>
+                Hi! My name is <strong className="text-white">Kevin Juliandito</strong>. I am a
+                Software Engineer at <strong className="text-white">Visual Analysis</strong> with
+                around <strong className="text-white">4 years of hands-on experience</strong> building and maintaining production-grade applications.
               </p>
               <p className="mt-4 text-base leading-8 text-slate-200">
-                With about <strong className="text-white">4 years of experience</strong> in building
-                software, I&apos;m familiar with a wide range of technologies related to{' '}
-                <strong className="text-white">Fullstack Development</strong>. For backend services,
-                mostly I used{' '}
-                <strong className="text-white">Python Django, Nest JS, Golang</strong>, and{' '}
-                <strong className="text-white">PHP Laravel</strong> with{' '}
-                <strong className="text-white">PostgreSQL, MSSQL</strong> and{' '}
-                <strong className="text-white">MySQL</strong> database. On the frontend side, I
-                frequently use <strong className="text-white">React</strong> and{' '}
-                <strong className="text-white">Vue JS</strong>. With these technologies, I&apos;m
-                capable of building{' '}
-                <strong className="text-white">effective and testable products</strong> with all
-                around functionalities. Aside from development tools, I&apos;ve also used{' '}
-                <strong className="text-white">DevOps</strong> tools like{' '}
-                <strong className="text-white">Docker, Kubernetes and Jenkins</strong> to deploy the
-                product in various environments.
+                I focus on shipping <strong className="text-white">effective, testable, and
+                scalable products</strong>, from feature discovery to delivery. My work spans
+                fullstack implementation, especially on data-heavy dashboards, internal tools, and
+                user-facing web platforms that need strong performance and clear UX.
               </p>
               <p className="mt-4 text-base leading-8 text-slate-200">
-                Other than tech stuff, I&apos;ve also taken up the role of{' '}
-                <strong className="text-white">Scrum Master</strong> in my team, with{' '}
-                <strong className="text-white">PSM I</strong> certification I took part in
-                implementing{' '}
-                <strong className="text-white">Agile Development Scrum</strong> to make sure my
-                team can deliver great products on time.
+                I enjoy close collaboration with designers, QA, and product stakeholders to align
+                technical direction with business goals. I have also taken the role of
+                <strong className="text-white"> Scrum Master</strong>, applying
+                <strong className="text-white"> Agile Scrum practices</strong> to help teams deliver
+                reliably and continuously improve execution.
               </p>
+
+              <div className="mt-6">
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">
+                  Skills &amp; Tools
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {skillTools.map((item) => (
+                    <Badge key={item}>{item}</Badge>
+                  ))}
+                </div>
+              </div>
               <p className="mt-5 text-sm text-slate-300">
                 Want to know more about me? Check out my resume here!
               </p>
@@ -124,7 +141,7 @@ function App() {
 
           {/* Projects section */}
           <div className="mb-16">
-            <h2 className="mb-5 text-2xl font-bold text-white">My Featured Projects</h2>
+            <h2 className="mb-5 text-2xl font-bold text-white">My Featured Projects 🚀</h2>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-5">
               {projects.map((project) => (
                 <ProjectCard key={project.id} project={project} onSelect={setSelectedProject} />
