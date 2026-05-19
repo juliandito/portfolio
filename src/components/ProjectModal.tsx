@@ -46,7 +46,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-modal-title"
-        className="glow-ring max-h-[92vh] w-full max-w-2xl overflow-hidden rounded-[28px] border border-base-300/80 bg-base-100 shadow-2xl shadow-black/50"
+        className="glow-ring max-h-[92vh] w-full max-w-4xl px-6 overflow-hidden rounded-[28px] border border-base-300/80 bg-base-100 shadow-2xl shadow-black/50"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="max-h-[92vh] overflow-y-auto px-6 py-6 sm:px-8 sm:py-7">
@@ -72,10 +72,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Scope property row */}
           <div className="mb-6 flex items-center gap-3 text-sm text-slate-400">
-            <span className="flex items-center gap-1.5">
-              <span>≡</span>
-              <span>Scope</span>
-            </span>
             <Badge tone="accent">{project.scope}</Badge>
           </div>
 
@@ -95,14 +91,11 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           {/* Tools */}
           <div className="mb-7">
             <h4 className="mb-3 text-base font-semibold text-white">Tools:</h4>
-            <ul className="space-y-1.5 text-sm text-slate-300">
+            <div className="flex flex-wrap gap-2">
               {project.tools.map((tool) => (
-                <li key={tool} className="flex items-center gap-2">
-                  <span className="text-info">•</span>
-                  <span>{tool}</span>
-                </li>
+                <Badge key={tool}>{tool}</Badge>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Preview */}
@@ -127,11 +120,11 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             <h4 className="mb-3 inline-block border-b-2 border-info/60 pb-0.5 text-lg font-bold text-info">
               Key Takeaways
             </h4>
-            <ul className="space-y-2 text-sm text-slate-200">
+            <ul className="space-y-2 text-slate-200">
               {project.takeaways.map((takeaway) => (
                 <li key={takeaway} className="flex gap-2">
                   <span className="mt-0.5 text-info">•</span>
-                  <span className="leading-7">{takeaway}</span>
+                  <span className="leading-normal">{takeaway}</span>
                 </li>
               ))}
             </ul>

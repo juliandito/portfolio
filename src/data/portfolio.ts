@@ -34,87 +34,201 @@ export const profilePhoto = asset('media/profile/photo.jpg')
 
 export const projects: Project[] = [
   {
-    id: 'launchpad',
-    icon: '🚀',
-    title: 'Launchpad Commerce',
-    summary:
-      'A storefront control center that gives growth teams a fast way to monitor launches, inventory, and campaign readiness.',
+    id: 'insight-portal',
+    icon: '🔎',
+    title: 'Insight Portal Origin',
     overview:
-      'Launchpad Commerce centralizes launch-day signals into a single operational dashboard. The experience was designed to surface blockers quickly, keep stakeholders aligned, and reduce the friction between marketing and engineering during high-traffic releases.',
+      'Insight Portal is a data analytics and visualization tools for large scale data. With advanced feature such as graph visualization, query builder, elasticsearch and much more, this application is a great tools for quick and accurate information management. Being built in Kubernetes architecture also enhance the scalability of the system for larger user base.',
     scope: 'Work',
-    thumbnail: asset('media/projects/launchpad-card.svg'),
-    hero: asset('media/projects/launchpad-hero.svg'),
-    tools: ['React', 'TypeScript', 'Tailwind CSS', 'DaisyUI', 'REST APIs'],
+    thumbnail: asset('media/projects/insight-portal-2.jpg'),
+    hero: asset('media/projects/insight-portal-2.jpg'),
+    tools: ['Django DRF', 'Vue JS', 'PostgreSQL', 'MSSQL', 'Redis', 'Elasticsearch', 'Kubernetes', 'Docker'],
     screenshots: [
       {
-        src: asset('media/projects/launchpad-shot-1.svg'),
-        alt: 'Launchpad dashboard showing deployment status and launch metrics',
+        src: asset('media/projects/insight-portal-hero.jpg'),
+        alt: 'Main hero image of Insight Portal',
       },
       {
-        src: asset('media/projects/launchpad-shot-2.svg'),
-        alt: 'Launchpad task board for launch preparation steps',
+        src: asset('media/projects/insight-portal-1.jpg'),
+        alt: 'Insight Portal dashboard showing chart feature',
+      },
+      {
+        src: asset('media/projects/insight-portal-2.jpg'),
+        alt: 'Insight Portal dashboard showing tactical visualization',
+      },
+      {
+        src: asset('media/projects/insight-portal-3.jpg'),
+        alt: 'Insight Portal search engine',
       },
     ],
     takeaways: [
-      'Designed for scanability first so the most important launch blockers stay visible on smaller screens.',
-      'Used compact dashboard patterns and muted surfaces to keep the interface calm under pressure.',
-      'Focused on clear state indicators and predictable navigation for cross-functional teams.',
+      'Explored advanced tools like caching, elastic, data visualization, reporting, language localization, 3rd party integration and much more.',
+      'Participating in full SDLC helps with product vision and overall business goals.',
+      'Configured Kubernetes architecture in a bare metal VM to support clients that don’t use Docker.',
     ],
   },
   {
-    id: 'signalflow',
-    icon: '📝',
-    title: 'SignalFlow Notes',
-    summary:
-      'A polished personal project for turning meeting notes and quick thoughts into searchable, structured knowledge.',
+    id: 'manufacture-execution-system',
+    icon: '⚙️',
+    title: 'Manufacture Execution System (MES)',
     overview:
-      'SignalFlow Notes explores a lightweight knowledge workflow for individuals who want fast capture, clean organization, and delightful review moments. The product direction emphasized speed, low visual noise, and a writing-first interface that still feels modern.',
-    scope: 'Personal',
-    thumbnail: asset('media/projects/signalflow-card.svg'),
-    hero: asset('media/projects/signalflow-hero.svg'),
-    tools: ['React', 'TypeScript', 'DaisyUI', 'Local Storage', 'Accessible UI'],
+      'This ERP platform is developed for for a client to manage its spare part resources. Developed on top of microservices architecture for the core functionality like authentication and authorization, this application work seamlessly with customized feature for the client user. With the requirement of ecommerce-like system, this platform have advanced search functionality and stable workflow for ERP purposes. Also, with NoSQL database for the items detail, the config is highly customizable.',
+    scope: 'Work',
+    thumbnail: asset('media/projects/mes-1.png'),
+    hero: asset('media/projects/mes-1.png'),
+    tools: ['Nest JS', 'Vue JS', 'PostgreSQL', 'MongoDB', 'gRPC'],
     screenshots: [
       {
-        src: asset('media/projects/signalflow-shot-1.svg'),
-        alt: 'SignalFlow note editor with quick-capture layout',
+        src: asset('media/projects/mes-1.png'),
+        alt: 'Login page and dashboard of the MES application',
       },
       {
-        src: asset('media/projects/signalflow-shot-2.svg'),
-        alt: 'SignalFlow library view with filters and saved notes',
+        src: asset('media/projects/mes-2.png'),
+        alt: 'Sparepart search page with filter and search result list',
+      },
+      {
+        src: asset('media/projects/mes-3.png'),
+        alt: 'Sparepart database and detail page',
+      },
+      {
+        src: asset('media/projects/mes-4.png'),
+        alt: 'System configuration page',
       },
     ],
     takeaways: [
-      'Prototyped around keyboard-friendly interactions to support fast capture and review.',
-      'Balanced playful accent color with a grounded dark palette to preserve readability.',
-      'Kept the information hierarchy shallow so content stays the main focus.',
+      'Existing microservices core feature helps to jumpstart the development for base flow.',
+      'NoSQL DB enables dynamic information for each items, but also requires careful design to avoid maintenance overhead.',
+      'Helping to deploy the product in client’s environment, improves problem solving ability under pressure.',
     ],
   },
   {
-    id: 'orbit-ops',
-    icon: '🌀',
-    title: 'Orbit Ops',
-    summary:
-      'A team operations hub that helps engineering managers track delivery, risks, and weekly execution across squads.',
+    id: 'mechtech',
+    icon: '📖',
+    title: 'MechTech Indonesia LMS Platform',
     overview:
-      'Orbit Ops combines delivery snapshots, dependency tracking, and action-oriented meeting notes into one steady rhythm for weekly planning. The interface favors concise summaries, responsive layouts, and reusable status patterns that scale from desktop to mobile.',
+      'This LMS platform was developed for MechTech Indonesia. In its early years (2020), MechTech relied solely on WordPress, which limited their ability to offer online courses. To address this, a full-stack Laravel-based LMS was built. The platform features an online course area and a full-featured admin panel for managing courses, users, payment gateways, and certificate generation. It was deployed to a shared hosting provider and maintained for about a year before being revamped. With growing user base, we decided to revamp the platform to have more modern and flexible features, the revamp process includes changing the backend to use Golang and frontend into Vue JS',
     scope: 'Work',
-    thumbnail: asset('media/projects/orbit-card.svg'),
-    hero: asset('media/projects/orbit-hero.svg'),
-    tools: ['Vite', 'React', 'Tailwind CSS', 'Charts', 'Design Systems'],
+    thumbnail: asset('media/projects/mechtech-1.png'),
+    hero: asset('media/projects/mechtech-1.png'),
+    tools: ['Laravel', 'MySQL', 'jQuery', 'Rich Text Editor integration (TinyMCE)', 'Payment Gateway Integration (Midtrans)', 'Golang Gin', 'Vue JS'],
     screenshots: [
       {
-        src: asset('media/projects/orbit-shot-1.svg'),
-        alt: 'Orbit Ops delivery timeline and squad health cards',
+        src: asset('media/projects/mechtech-1.png'),
+        alt: 'MechTech LMS',
       },
       {
-        src: asset('media/projects/orbit-shot-2.svg'),
-        alt: 'Orbit Ops weekly planning board with actions and risks',
+        src: asset('media/projects/mechtech-2.png'),
+        alt: 'MechTech LMS',
+      },
+      {
+        src: asset('media/projects/mechtech-3.png'),
+        alt: 'MechTech LMS',
+      },
+      {
+        src: asset('media/projects/mechtech-4.png'),
+        alt: 'MechTech LMS',
+      },
+      {
+        src: asset('media/projects/mechtech-5.png'),
+        alt: 'MechTech LMS',
+      },
+      {
+        src: asset('media/projects/mechtech-6.png'),
+        alt: 'MechTech LMS',
+      },
+      {
+        src: asset('media/projects/mechtech-7.png'),
+        alt: 'MechTech LMS',
+      },
+      {
+        src: asset('media/projects/mechtech-8.png'),
+        alt: 'MechTech LMS',
+      },
+      {
+        src: asset('media/projects/mechtech-9.png'),
+        alt: 'MechTech LMS',
+      },
+      {
+        src: asset('media/projects/mechtech-10.png'),
+        alt: 'MechTech LMS',
+      },
+      {
+        src: asset('media/projects/mechtech-11.png'),
+        alt: 'MechTech LMS',
       },
     ],
     takeaways: [
-      'Created repeatable card and badge patterns that adapt well across several data densities.',
-      'Used subtle glows and cyan highlights sparingly so important actions feel actionable without visual clutter.',
-      'Made responsive tradeoffs early to ensure the product remains effective on tablets and phones.',
+      'Designing and building fully functional platforms requires fast adaptation for changes during the development.',
+      'Migrating across different environment should be planed carefully to prevent data loss in a live product/services, especially with different database + backend frameworks.',
+    ],
+  },
+  {
+    id: 'reporting-system',
+    icon: '📊',
+    title: 'Auto Reporting System',
+    overview:
+      'A full-stack reporting system that converts Excel data into interactive visual reports. The frontend (React + TypeScript) provides a guided workflow for uploading, previewing, and configuring charts, while a Golang REST API handles data processing, storage, and report generation.',
+    scope: 'Project',
+    thumbnail: asset('media/projects/reporting-1.png'),
+    hero: asset('media/projects/reporting-1.png'),
+    tools: ['Golang', 'PostgreSQL', 'Redis', 'React', 'TypeScript', 'Tailwind CSS', 'DaisyUI'],
+    screenshots: [
+      {
+        src: asset('media/projects/reporting-1.png'),
+        alt: 'Reporting system',
+      },
+      {
+        src: asset('media/projects/reporting-2.png'),
+        alt: 'Reporting system',
+      },
+      {
+        src: asset('media/projects/reporting-3.png'),
+        alt: 'Reporting system',
+      },
+      {
+        src: asset('media/projects/reporting-4.png'),
+        alt: 'Reporting system',
+      },
+      {
+        src: asset('media/projects/reporting-5.png'),
+        alt: 'Reporting system',
+      },
+    ],
+    takeaways: [
+      'Designed a full-stack architecture with React frontend and Golang REST API with a step-based workflow (upload → preview → configure → generate report).',
+      'Leveraged modern stack (React, TypeScript, Vite, Tailwind, Chart.js) for performance and maintainability.',
+    ],
+  },
+  {
+    id: 'timatcher',
+    icon: '👥',
+    title: 'TiMatcher',
+    overview:
+      'TiMatcher is a platform to automate group creation with certain formulas developed by lecturers in PENS. This platform is created for a school project/competition(PENS Fest 2022 organized by SimHive/AgileTeknik. TiMatcher won the 1st best web application category. Developed for few months with Agile methodologies from the very start, with each iteration brings meaningful improvement to the product.',
+    scope: 'Project',
+    thumbnail: asset('media/projects/timatcher-1.png'),
+    hero: asset('media/projects/timatcher-1.png'),
+    tools: ['Laravel','MySQL', 'Vue JS', 'Vuetify'],
+    screenshots: [
+      {
+        src: asset('media/projects/timatcher-1.png'),
+        alt: 'TiMatcher',
+      },
+      {
+        src: asset('media/projects/timatcher-2.png'),
+        alt: 'TiMatcher',
+      },
+      {
+        src: asset('media/projects/timatcher-3.png'),
+        alt: 'TiMatcher',
+      },
+      {
+        src: asset('media/projects/timatcher-4.png'),
+        alt: 'TiMatcher',
+      },
+    ],
+    takeaways: [
+      'Agile development from ideation stage up to post-deployment stage helped a lot with breaking down the product into achievable sprints',
     ],
   },
 ]

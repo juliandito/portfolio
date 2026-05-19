@@ -1,4 +1,4 @@
-export type ProjectScope = 'Work' | 'Personal'
+export type ProjectScope = 'Work' | 'Personal' | 'Project'
 
 export type ProjectScreenshot = {
   src: string
@@ -8,7 +8,6 @@ export type ProjectScreenshot = {
 export type Project = {
   id: string
   title: string
-  summary: string
   overview: string
   scope: ProjectScope
   icon?: string

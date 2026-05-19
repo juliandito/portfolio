@@ -142,7 +142,7 @@ function App() {
           {/* Projects section */}
           <div className="mb-16">
             <h2 className="mb-5 text-2xl font-bold text-white">My Featured Projects 🚀</h2>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-5">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-2 xl:grid-cols-3 xl:gap-7">
               {projects.map((project) => (
                 <ProjectCard key={project.id} project={project} onSelect={setSelectedProject} />
               ))}
