@@ -1,26 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { X } from 'lucide-react'
 
 import { Badge } from './Badge'
 import type { Project } from '../types'
-
-type TabId = 'overview' | 'tools' | 'screenshots' | 'takeaways'
 
 type ProjectModalProps = {
   project: Project | null
   onClose: () => void
 }
 
-const tabs: { id: TabId; label: string }[] = [
-  { id: 'overview', label: 'Overview' },
-  { id: 'tools', label: 'Tools' },
-  { id: 'screenshots', label: 'Screenshots' },
-  { id: 'takeaways', label: 'Key Takeaways' },
-]
-
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
-  const [activeTab, setActiveTab] = useState<TabId>('overview')
-
   useEffect(() => {
     if (!project) {
       return
@@ -57,91 +46,95 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-modal-title"
-        className="glow-ring max-h-[92vh] w-full max-w-5xl overflow-hidden rounded-[28px] border border-base-300/80 bg-base-100 shadow-2xl shadow-black/50"
+        className="glow-ring max-h-[92vh] w-full max-w-2xl overflow-hidden rounded-[28px] border border-base-300/80 bg-base-100 shadow-2xl shadow-black/50"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="relative border-b border-base-300/70 bg-base-200/70">
-          <img src={project.hero} alt="" className="h-72 w-full object-cover sm:h-80" />
-          <button
-            type="button"
-            onClick={onClose}
-            className="btn btn-circle btn-sm absolute right-4 top-4 border-none bg-slate-950/70 text-white hover:bg-slate-900"
-            aria-label="Close project details"
-          >
-            <X size={16} />
-          </button>
-        </div>
+        <div className="max-h-[92vh] overflow-y-auto px-6 py-6 sm:px-8 sm:py-7">
+          {/* Close */}
+          <div className="mb-5 flex justify-end">
+            <button
+              type="button"
+              onClick={onClose}
+              className="btn btn-circle btn-sm border-none bg-base-200/80 text-slate-300 hover:bg-base-300"
+              aria-label="Close project details"
+            >
+              <X size={16} />
+            </button>
+          </div>
 
-        <div className="max-h-[calc(92vh-18rem)] overflow-y-auto px-5 py-5 sm:px-8 sm:py-7">
-          <div className="flex flex-col gap-4 border-b border-base-300/70 pb-6 sm:flex-row sm:items-start sm:justify-between">
-            <div>
-              <div className="mb-3 flex flex-wrap items-center gap-3">
-                <Badge tone="accent">{project.scope}</Badge>
-                <span className="text-sm text-slate-400">Project Detail</span>
-              </div>
-              <h3 id="project-modal-title" className="text-3xl font-semibold text-base-content">
-                {project.title}
-              </h3>
+          {/* Icon + Title */}
+          <div className="mb-4 flex items-start gap-4">
+            <span className="text-5xl leading-none">{project.icon ?? '📁'}</span>
+            <h3 id="project-modal-title" className="text-3xl font-bold text-white leading-tight mt-1">
+              {project.title}
+            </h3>
+          </div>
+
+          {/* Scope property row */}
+          <div className="mb-6 flex items-center gap-3 text-sm text-slate-400">
+            <span className="flex items-center gap-1.5">
+              <span>≡</span>
+              <span>Scope</span>
+            </span>
+            <Badge tone="accent">{project.scope}</Badge>
+          </div>
+
+          {/* Hero image */}
+          <div className="mb-8 overflow-hidden rounded-2xl border border-base-300/70">
+            <img src={project.hero} alt="" className="w-full object-cover" />
+          </div>
+
+          {/* Overview */}
+          <div className="mb-7">
+            <h4 className="mb-3 inline-block border-b-2 border-info/60 pb-0.5 text-lg font-bold text-info">
+              Overview
+            </h4>
+            <p className="text-base leading-8 text-slate-200">{project.overview}</p>
+          </div>
+
+          {/* Tools */}
+          <div className="mb-7">
+            <h4 className="mb-3 text-base font-semibold text-white">Tools:</h4>
+            <ul className="space-y-1.5 text-sm text-slate-300">
+              {project.tools.map((tool) => (
+                <li key={tool} className="flex items-center gap-2">
+                  <span className="text-info">•</span>
+                  <span>{tool}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Preview */}
+          <div className="mb-7">
+            <h4 className="mb-3 inline-block border-b-2 border-info/60 pb-0.5 text-lg font-bold text-info">
+              Preview
+            </h4>
+            <div className="grid grid-cols-2 gap-3">
+              {project.screenshots.map((screenshot) => (
+                <figure
+                  key={screenshot.src}
+                  className="overflow-hidden rounded-2xl border border-base-300/70 bg-base-200/50"
+                >
+                  <img src={screenshot.src} alt={screenshot.alt} className="h-full w-full object-cover" />
+                </figure>
+              ))}
             </div>
-            <p className="max-w-xl text-sm leading-6 text-slate-300">{project.summary}</p>
           </div>
 
-          <div className="tabs tabs-box mt-6 inline-flex border border-base-300/80 bg-base-200/70 p-1">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                role="tab"
-                aria-selected={activeTab === tab.id}
-                className={`tab rounded-xl px-4 ${activeTab === tab.id ? 'tab-active bg-base-100 text-info' : 'text-slate-300'}`}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-6">
-            {activeTab === 'overview' ? (
-              <div className="space-y-4">
-                <p className="text-base leading-8 text-slate-200">{project.overview}</p>
-              </div>
-            ) : null}
-
-            {activeTab === 'tools' ? (
-              <div className="flex flex-wrap gap-3">
-                {project.tools.map((tool) => (
-                  <Badge key={tool}>{tool}</Badge>
-                ))}
-              </div>
-            ) : null}
-
-            {activeTab === 'screenshots' ? (
-              <div className="grid gap-4 md:grid-cols-2">
-                {project.screenshots.map((screenshot) => (
-                  <figure
-                    key={screenshot.src}
-                    className="overflow-hidden rounded-3xl border border-base-300/70 bg-base-200/50"
-                  >
-                    <img src={screenshot.src} alt={screenshot.alt} className="h-full w-full object-cover" />
-                    <figcaption className="px-4 py-3 text-sm text-slate-300">{screenshot.alt}</figcaption>
-                  </figure>
-                ))}
-              </div>
-            ) : null}
-
-            {activeTab === 'takeaways' ? (
-              <ul className="space-y-3 text-sm leading-7 text-slate-200">
-                {project.takeaways.map((takeaway) => (
-                  <li key={takeaway} className="flex gap-3 rounded-2xl border border-base-300/70 bg-base-200/40 px-4 py-3">
-                    <span aria-hidden="true" className="mt-0.5 text-info">
-                      ✓
-                    </span>
-                    <span>{takeaway}</span>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
+          {/* Key Takeaways */}
+          <div>
+            <h4 className="mb-3 inline-block border-b-2 border-info/60 pb-0.5 text-lg font-bold text-info">
+              Key Takeaways
+            </h4>
+            <ul className="space-y-2 text-sm text-slate-200">
+              {project.takeaways.map((takeaway) => (
+                <li key={takeaway} className="flex gap-2">
+                  <span className="mt-0.5 text-info">•</span>
+                  <span className="leading-7">{takeaway}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

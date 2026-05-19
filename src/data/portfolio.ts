@@ -14,13 +14,13 @@ export const techStack = [
 export const contactLinks = [
   {
     label: 'Email',
-    value: 'hello@juliandito.dev',
-    href: 'mailto:hello@juliandito.dev',
+    value: 'sjuliandito@gmail.com',
+    href: 'mailto:sjuliandito@gmail.com',
   },
   {
     label: 'LinkedIn',
-    value: 'linkedin.com/in/juliandito',
-    href: 'https://www.linkedin.com/in/juliandito/',
+    value: 'linkedin.com/in/kevinjuliandito',
+    href: 'https://www.linkedin.com/in/kevinjuliandito/',
   },
   {
     label: 'GitHub',
@@ -30,11 +30,12 @@ export const contactLinks = [
 ]
 
 export const resumeHref = asset('resume-julian-dito.pdf')
-export const profilePhoto = asset('media/profile/julian-dito.svg')
+export const profilePhoto = asset('media/profile/photo.jpg')
 
 export const projects: Project[] = [
   {
     id: 'launchpad',
+    icon: '🚀',
     title: 'Launchpad Commerce',
     summary:
       'A storefront control center that gives growth teams a fast way to monitor launches, inventory, and campaign readiness.',
@@ -62,6 +63,7 @@ export const projects: Project[] = [
   },
   {
     id: 'signalflow',
+    icon: '📝',
     title: 'SignalFlow Notes',
     summary:
       'A polished personal project for turning meeting notes and quick thoughts into searchable, structured knowledge.',
@@ -89,6 +91,7 @@ export const projects: Project[] = [
   },
   {
     id: 'orbit-ops',
+    icon: '🌀',
     title: 'Orbit Ops',
     summary:
       'A team operations hub that helps engineering managers track delivery, risks, and weekly execution across squads.',

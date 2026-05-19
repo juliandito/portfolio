@@ -11,6 +11,7 @@ export type Project = {
   summary: string
   overview: string
   scope: ProjectScope
+  icon?: string
   thumbnail: string
   hero: string
   tools: string[]
