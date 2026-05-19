@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" fill="none">
+  <rect width="1440" height="720" fill="#0B1220"/>
+  <rect x="72" y="72" width="1296" height="576" rx="36" fill="#0F172A" stroke="#1E293B"/>
+  <rect x="120" y="126" width="310" height="468" rx="28" fill="#14243A"/>
+  <rect x="468" y="126" width="392" height="180" rx="28" fill="#13313D"/>
+  <rect x="900" y="126" width="420" height="180" rx="28" fill="#16253A"/>
+  <rect x="468" y="344" width="852" height="250" rx="28" fill="#14243A"/>
+  <path d="M526 428C593 379 647 462 710 428C773 394 843 468 913 404C983 340 1031 402 1092 385C1153 368 1194 448 1260 404" stroke="#22D3EE" stroke-width="12" stroke-linecap="round"/>
+  <path d="M527 489H1220" stroke="#334155" stroke-width="10" stroke-linecap="round"/>
+  <path d="M527 529H1080" stroke="#334155" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="270" cy="232" r="54" fill="#2EE6D6" fill-opacity="0.2"/>
+  <text x="120" y="108" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="40">Launchpad Commerce</text>
+</svg>
