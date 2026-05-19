@@ -29,7 +29,7 @@ export const contactLinks = [
   },
 ]
 
-export const resumeHref = asset('resume-julian-dito.pdf')
+export const resumeHref = asset('resume-kevin.pdf')
 export const profilePhoto = asset('media/profile/photo.jpg')
 
 export const projects: Project[] = [
