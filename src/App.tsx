@@ -63,11 +63,11 @@ function App() {
           <div className="mb-14 grid gap-8 lg:grid-cols-[280px_1fr]">
             {/* Left: profile photo + contact */}
             <div className="flex flex-col gap-6">
-              <div className="glow-ring overflow-hidden rounded-2xl border border-base-300/70">
+              <div className="glow-ring mx-auto w-full max-w-55 overflow-hidden rounded-2xl border border-base-300/70 sm:max-w-62.5 lg:mx-0 lg:max-w-none">
                 <img
                   src={profilePhoto}
                   alt="Portrait of Kevin Juliandito"
-                  className="w-full object-cover"
+                  className="aspect-4/5 w-full object-cover"
                 />
               </div>
 
